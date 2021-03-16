@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    h2{
+      font-style:bold;
+      color: mistyrose;
+    }
+    section{
+      display:grid;
+      gap: 20px;
+      grid-template-columns: repeat(4, 1fr)
+    }
+  </style>  
+  <head>
+    <title>Job Search</title>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+    <h3>Found {{resultsNumber}} results for {{searchingBy}}</h3>
+    <!--{{potato}}-->
+    <a href="/export?gogo={{searchingBy}}">Export to CSV </a>
+    <section>
+      <h4>title</h4>
+      <h4>company</h4>
+      <h4>location</h4>
+      <h4>link</h4>
+      {% for job in jobs %} <!--jobs가 있어야함 -->
+        <span>{{ job.title }}</span>
+        <span>{{ job.company }}</span>
+        <span>{{ job.location }}</span>
+        <a href="{{job.link}}" target="_black">Apply</a>
+      {% endfor %}
+      <table>
+
+
+
+      </table>
+    </section>
+  </body>
+
+</html>
